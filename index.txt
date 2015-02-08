@@ -1,0 +1,16 @@
+    <!DOCTYPE html>
+<html>
+  <head ng-app="store">
+    <title>Bootstrap 101 Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+  </head>
+  <body>
+    
+    
+    <script type = "text/javascript" src="angular.min.js"></script>
+    <script type = "text/javascript" src="app.js"></script>
+    <p> {{"hello " + " you"}} </p>   
+  </body>
+</html>
