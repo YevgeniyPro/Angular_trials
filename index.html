@@ -1,27 +1,49 @@
     <!DOCTYPE html>
-<html ng-app="store">
+<html ng-app="gemStore">
   <head >
     <title>AngularJS Trials </title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
-  </head>
-  <body ng-controller = "StoreController as store">
-    <div ng-repeat = "product in store.products"  ng-hide = "store.producs.soldOut">
-        <h1> {{product.name}}</h1>
-        <h2> ${{product.price}} </h2>
-        <p> {{product.description}}</p>
-        <button ng-show = "product.canPurchase"> Add to cart </button>
-    </div> 
-    <!--<div ng-hide = "store.products[1].soldOut">
-        <h1> {{store.products[1].name}}</h1>
-        <h2> ${{store.products[1].price}} </h2>
-        <p> {{store.products[1].description}}</p>
-        <button ng-show = "store.products[1].canPurchase"> Add to cart </button>
-    </div>--> 
-  
-    <script type = "text/javascript" src="angular.min.js"></script>
+    
+     <script type = "text/javascript" src="angular.min.js"></script>
     <script type = "text/javascript" src="app.js"></script>
- 
+    <!-- Bootstrap -->
+    <link  rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  </head>
+  <body ng-controller = "StoreController as store" class = "list-group" style="style="background-color:lightgrey ; width: 400"> 
+    <div style = "width = 600" >
+      <h1> A modern gem store</h1>
+      <h3> 
+        <em> - Made with AngularJS - </em>
+      </h3>
+
+    </div>
+
+      <div class = "list-group-item" ng-repeat = "product in store.products | orderBy: 'price'">
+    
+        <h3> {{product.name}}
+            <em class= "pull-right">{{product.price | currency }} </em> 
+        </h3>
+        <!-- Gallery-->
+            <div class gallery ng-show = "product.images.length > 0">
+                <div class+ "img-wrap">
+
+                   <img ng-src= "{{product.images[0]}}">
+                </div>
+                <ul class="img-thumbnail clearfix">
+                    <li class = "small-image pull-left thumbnail" ng-repeat="image in product.images[1]">
+                      <img ng-src = "{{image}}"/>
+
+                    </li>
+
+                </ul>        
+            </div>
+        <p> {{product.description }}</p>
+        <button ng-show = "product.canPurchase"> Add to cart </button> 
+        <hr>
+    
+      
+    
+     
+   
+    </div>
    </body>
 </html>
