@@ -1,20 +1,27 @@
     <!DOCTYPE html>
 <html ng-app="store">
   <head >
-    <title>Bootstrap 101 </title>
+    <title>AngularJS Trials </title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
   </head>
-  <body >
-      
+  <body ng-controller = "StoreController as store">
+    <div ng-repeat = "product in store.products"  ng-hide = "store.producs.soldOut">
+        <h1> {{product.name}}</h1>
+        <h2> ${{product.price}} </h2>
+        <p> {{product.description}}</p>
+        <button ng-show = "product.canPurchase"> Add to cart </button>
+    </div> 
+    <!--<div ng-hide = "store.products[1].soldOut">
+        <h1> {{store.products[1].name}}</h1>
+        <h2> ${{store.products[1].price}} </h2>
+        <p> {{store.products[1].description}}</p>
+        <button ng-show = "store.products[1].canPurchase"> Add to cart </button>
+    </div>--> 
+  
     <script type = "text/javascript" src="angular.min.js"></script>
     <script type = "text/javascript" src="app.js"></script>
-
-    
-    <p> {{"hello " + " you" +" bastardo"}} </p>   
-   <p> I am {{17 +13 }} </p>   
-
-
-  </body>
+ 
+   </body>
 </html>
