@@ -1,0 +1,17 @@
+<!--  Review Form -->
+              <h4>Submit a Review</h4>
+                <fieldset>
+                <select ng-model="reviewCtrl.review.stars" class="form-control" ng-options="stars for stars in [5,4,3,2,1]"  title="Stars" required>
+                  <option value="">Rate the Product</option>
+                </select>
+                </fieldset>
+                <fieldset>
+                <textarea name = "body" ng-model="reviewCtrl.review.body" class="form-control" placeholder="Write a short review of the product..." title="Review" required></textarea>
+                </fieldset>
+                <fieldset>
+                <input name = "author" ng-model="reviewCtrl.review.author" class="form-control" placeholder="jimmyDean@example.org" title="Email"type="email"  required/>
+              </fieldset>
+                <fieldset>
+             
+                <input type="submit" class="btn btn-primary pull-right" value="Submit Review" />
+                </fieldset>

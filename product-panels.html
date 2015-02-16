@@ -1,0 +1,37 @@
+ <ul class = "nav nav-pills">
+            <li ng-class = "{active : tab.isSelected(1)}"><a ng-click="tab.setTab(1)" href>Description</a></li>
+            <li ng-class = "{active : tab.isSelected(2)}"><a ng-click="tab.setTab(2)" href>Specification</a></li>
+            <li ng-class = "{active : tab.isSelected(3)}"><a ng-click="tab.setTab(3)" href>Reviews </a></li>
+          </ul>
+           
+        
+        <!-- panels with content of the tabs -->
+
+        <product-description ng-show = "tab.isSelected(1)"></product-description>
+          
+        
+        
+        <div class = "panel" ng-show = "tab.isSelected(2)" product-specification>  </div>
+         
+        <!-- All product reviews-->
+        <div class = "panel" ng-show = "tab.isSelected(3)">
+          <h4>Reviews</h4>
+          <blockquote ng-show = "product.reviews.length === 0"> None yet </blockquote>
+          <blockquote ng-hide = "product.reviews.length === 0" ng-repeat = "review in product.reviews"> 
+            <b> Stars :  {{review.stars}}</b>
+             " {{review.body}}"
+            <cite> by {{review.author}}  </cite>
+          </blockquote>
+          <!--  Review Form  -->
+            <form name="reviewForm" ng-controller = "ReviewController as reviewCtrl" ng-submit="reviewForm.$valid && reviewCtrl.addReview(product)" novalidate>
+              <!--  Live Preview -->
+              <blockquote>
+                <strong>{{'Your review : ' + reviewCtrl.review.stars}}</strong>
+                  {{ reviewCtrl.review.body}}
+                <cite class="clearfix">{{reviewCtrl.review.author}}</cite>
+              </blockquote>    
+
+              <submit-review></submit-review>           
+              
+            </form>
+        </div>
