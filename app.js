@@ -1,36 +1,21 @@
 (function (){
 
-	var app = angular.module('gemStore', []); 
+	var app = angular.module('gemStore', ['store-products']); 
 
 	app.controller('StoreController', function(){
 		this.products = gems;
 
 	});
 
-	app.controller('PanelController', function() {
-		
-		this.tab = 1;
-
-		this.setTab = function(setTab) {
-			this.tab = setTab;
-		};
-		this.isSelected = function(checkTab) {
-			return (this.tab === checkTab);
-		};
-		this.showTab = function() {
-			return this.tab;
-		};
-
-	} );
-
-
+	
+	
 
 	var gems = [ 
 	{
 
 		name: 'Dodecahedron',
 		price : 2.15,
-		description : 'description of Dodecaheron',
+		description : 'description of Dodecaherondescription of Dodecaherondescription of Dodecaherondescription of Dodecaherondescription of Dodecaherondescription of Dodecaherondescription of Dodecaherondescription of Dodecaherondescription of Dodecaherondescription of Dodecaherondescription of Dodecaherondescription of Dodecaherondescription of Dodecaherondescription of Dodecaherondescription of Dodecaherondescription of Dodecaheron  ',
 		canPurchase : true, 
 		soldOut : true, 
 		images : [
@@ -50,7 +35,7 @@
 	{
 		name: 'Azurit',
 		price : 3.95,
-		description : 'description of Azurit',
+		description : 'description of Azuritdescription of Azuritdescription of Azuritdescription of Azuritdescription of Azuritdescription of Azuritdescription of Azuritdescription of Azuritdescription of Azuritdescription of Azuritdescription of Azuritdescription of Azuritdescription of Azuritdescription of Azuritdescription of Azurit',
 		canPurchase : true, 
 		soldOut : false,
 		images : [
